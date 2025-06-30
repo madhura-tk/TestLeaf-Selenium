@@ -88,23 +88,23 @@ public class WindowHandlingLeafTab {
 		} else { //more than one contact exist.Selecting first two contacts and merge.
 			
 			
-			driver.findElement(By.xpath("//div[1]/table[@class='x-grid3-row-table']/tbody/tr[1]/td[1]/div/a")).click();
+			driver.findElement(By.xpath("//div[1]/table[@class='x-grid3-row-table']/tbody/tr[1]/td[1]/div/a")).click();//get the first record
 			Thread.sleep(100);
-			driver.switchTo().window(strParentWindow);
+			driver.switchTo().window(strParentWindow);//switching to parent window
 
-			driver.findElement(By.xpath("//input[@id='partyIdTo']/following-sibling::a")).click();
-			switchToChildWindow(driver);
-			driver.findElement(By.xpath("//div[2]/table[@class='x-grid3-row-table']/tbody/tr[1]/td[1]/div/a")).click();
+			driver.findElement(By.xpath("//input[@id='partyIdTo']/following-sibling::a")).click();//select the second contact widget
+			switchToChildWindow(driver);//switch to the child window
+			driver.findElement(By.xpath("//div[2]/table[@class='x-grid3-row-table']/tbody/tr[1]/td[1]/div/a")).click();//get the second record
 
 			Thread.sleep(100);
-			driver.switchTo().window(strParentWindow);
-			driver.findElement(By.xpath("//a[@class='buttonDangerous']")).click();
+			driver.switchTo().window(strParentWindow);//switching to the parent window
+			driver.findElement(By.xpath("//a[@class='buttonDangerous']")).click();//Click the Merge Button
 			Thread.sleep(100);
 			
-			Alert alert = driver.switchTo().alert();
+			Alert alert = driver.switchTo().alert();//Acceptin the alert to merge
 			alert.accept();
 		}
-		//Printing the last page of the task.
+		//Printing the title of the last page.
 		System.out.println(driver.getTitle());
 		driver.quit();
 	}
