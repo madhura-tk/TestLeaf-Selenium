@@ -80,6 +80,16 @@ public class BigBasketAction {
 		driver.findElement(By.xpath("//button[text()='Add to basket'][1]")).click();
 		Thread.sleep(1000);
 
+		//Verify the alert message
+	    	String alertMsg=driver.findElement(By.xpath("//p[contains(text(),'basket successfully')]")).getText();
+		if (!alertMsg.contains("Message")) {
+			System.out.println(alertMsg+" - Alert is verified");
+		}
+	       else {
+		    	System.out.println("Alert Message is Not found");
+		    }
+		Thread.sleep(500);
+
 		// Taking the Screenshot of the window and save the output in a file
 		File src = driver.getScreenshotAs(OutputType.FILE);
 		File des = new File("./screenshot/bigbasketsnap.png");
