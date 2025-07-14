@@ -1,5 +1,6 @@
 Feature: Editing a Account in SalesForce Application
 
+@staticparameters
 Scenario: Verifying the editing a account in SalesForce Application Successfully
 
 	When the user enters the username  as 'vidyar@testleaf.com'
@@ -27,6 +28,7 @@ Scenario: Verifying the editing a account in SalesForce Application Successfully
 	Then the user clicks the Save button
 	And the user verifies the phoneno
 
+@dynamicparameters
 Scenario Outline:
 When the user enters the username  as 'vidyar@testleaf.com'
 	And the user enters the password as 'Sales@123'
