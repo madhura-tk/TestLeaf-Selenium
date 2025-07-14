@@ -8,9 +8,9 @@ import io.cucumber.testng.CucumberOptions;
 							  	dryRun=false ,
 							  	publish = true,
 							  	monochrome=true,
-							  	plugin = {"pretty", "html:target/cucumber-report.html"}
-)
+							  	tags="@staticparameters or @dynamicparameters")
 
 public class TC0001_Parametrization extends ProjectSpecificMethods {
 
 }
+ 
